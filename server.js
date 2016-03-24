@@ -1,3 +1,6 @@
+//David Hoxie
+//dahoxie@gmail.com
+//Assignment 5
 var express = require("express"),
     http = require("http"),
     app = express(),
@@ -9,6 +12,9 @@ app.use(express.urlencoded());
 
 http.createServer(app).listen(3000);
 
+//Updates value of wins/losses and returns
+//a response with the result of a win or a
+//loss.
 app.post("/flip", function(req, res) {
     "use strict";
     var resultMessage,
@@ -31,6 +37,8 @@ app.post("/flip", function(req, res) {
     });
 });
 
+//Returns the stats json object when
+//the route is accessed.
 app.get("/stats", function(req, res) {
     "use strict";
     res.json({
